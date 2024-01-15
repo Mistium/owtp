@@ -1,12 +1,13 @@
-current_tab_name = {"title":"Rat Accelerator","icon":"image https://raw.githubusercontent.com/Mistium/Origin-OS/main/Websites/rataccelerator.web/assets/rat_mouse_PNG23553.png 40"}
+current_tab_name = {"title":"Rat Accelerator","icon":"image https://raw.githubusercontent.com/Mistium/owtp/main/rataccelerator.web/assets/rat_mouse_PNG23553.png 20"}
 
 if onload (
 inc = 0.01
 size = 0
+log "onload"
 )
 
 goto 0 0
-image "https://raw.githubusercontent.com/Mistium/Origin-OS/main/Websites/rataccelerator.web/assets/rat_mouse_PNG23553.png" size
+image "https://raw.githubusercontent.com/Mistium/owtp/main/rataccelerator.web/assets/rat_mouse_PNG23553.png" size
 
 inc = inc * 1.01
 size += inc
