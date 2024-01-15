@@ -42,13 +42,13 @@ loc 999 2 w / -2 y
 y -= 40
 item = out.[i].destr
 c global_accent
-text index.[item].key("path").replace("Websites/","") 10
+text index.[item].key("path") 10
 if clicked (
-opentab index.[item].key("path").replace("Websites/","owtp://")
+opentab "owtp://" ++ index.[item].key("path")
 )
 )
 
-page_len = out.len.clamp(0,10) * 40 + 100
+page_len = out.len.clamp(0,15) * 40 + 100
 
 loc 999 2 0 -25
 square frame_width - 20 40 20 1 : c#333
