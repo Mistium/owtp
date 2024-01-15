@@ -1,8 +1,8 @@
 current_tab_name = {"title":"About SSB"}
 
-superslime_url = "https://raw.githubusercontent.com/Mistium/Super-Slime-Bros/main/assets/readme.png"
+superslime_url = "https://raw.githubusercontent.com/Mistium/owtp/main/superslimebros.web/about/readme.png"
 
 multiplier = frame_width / superslime_url.imageinfo("width")
 page_len = superslime_url.imageinfo("height") * multiplier
-goto 0 scroll_y - ( page_len + frame_height / 2 )
+goto 0 scroll_y - ( page_len + frame_height / -2 )
 image superslime_url frame_width
