@@ -30,13 +30,13 @@ if out == "out".destr "out = []"
 y = -180 + scroll_y
 
 i = 0
-loop out.len.clamp(0,10) (
+loop out.len.clamp(0,15) (
 i += 1
 c #222
 loc 999 2 w / -2 y
 y -= 40
 item = out.[i].destr
-c accent_colour
+c global_accent
 text index.[item].key("path").replace("Websites/","") 10
 if clicked (
 opentab index.[item].key("path").replace("Websites/","owtp://")
