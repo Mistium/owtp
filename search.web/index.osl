@@ -1,21 +1,21 @@
 if onload (
-network "clear" "https://api.github.com/repos/Mistium/Origin-OS/git/trees/main?recursive=1"
+network "get" "https://api.github.com/repos/Mistium/owtp/git/trees/main?recursive=1"
 )
 
 
 w = 700
-if out.len == 0 "loc 999 999 0 50"
-if out.len > 0 "loc 999 2 0 -100"
+loc 999 2 0 -50
+change_x -10
+text "Search.web" 20 : c#fff
+loc 999 2 0 -100
 change_y scroll_y
 if frame_width - 100 < w "w = frame_width - 100"
 c c_searchbar
 square w 10 40 1
 change_x w * -0.5 + 10
-c c_tabtext
-icon "search" 0.7
+icon "search" 0.7 c#tab_text
 change w / 2 + 10
-c c_searchbar
-input w - 40 30 "searchBar" "Search the Origin Network"
+input w - 40 30 "searchBar" "Search the Origin Network" c#c_searchbar
 if selected_input == "searchBar" and "enter".pressed (
 network "get" "https://api.github.com/repos/Mistium/owtp/git/trees/main?recursive=1"
 index = data.key("tree")
@@ -50,10 +50,5 @@ opentab "owtp://" ++ index.[item].key("path")
 
 page_len = out.len.clamp(0,15) * 40 + 100
 
-loc 999 2 0 -25
-square frame_width - 20 40 20 1 : c#333
 loc 2 2 30 -30
 current_tab_name = {"title":"Origin Search","icon":"search"}
-icon "Origin-Logo" 0.7 : c#fff
-change 20
-text "Origin Search" 8
