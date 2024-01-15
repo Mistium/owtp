@@ -17,7 +17,7 @@ change w / 2 + 10
 c c_searchbar
 input w - 40 30 "searchBar" "Search the Origin Network"
 if selected_input == "searchBar" and "enter".pressed (
-network "get" "https://api.github.com/repos/Mistium/Origin-OS/git/trees/main?recursive=1"
+network "get" "https://api.github.com/repos/Mistium/owtp/git/trees/main?recursive=1"
 index = data.key("tree")
 out = []
 
@@ -27,7 +27,7 @@ i += 1
 cur = index.[i].key("path").split("/")
 last = cur.len
 current = cur.[last]
-if cur.[1] == "websites" and current.contains(input_searchBar) "out = out.append(i)"
+if current.contains(input_searchBar) "out = out.append(i)"
 )
 )
 
