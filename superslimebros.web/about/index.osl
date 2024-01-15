@@ -4,5 +4,5 @@ superslime_url = "https://raw.githubusercontent.com/Mistium/Super-Slime-Bros/mai
 
 multiplier = frame_width / superslime_url.imageinfo("width")
 page_len = superslime_url.imageinfo("height") * multiplier
-goto 0 page_len / 2 + scroll_y
+goto 0 page_len / -2 + scroll_y
 image superslime_url frame_width
