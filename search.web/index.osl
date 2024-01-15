@@ -5,7 +5,7 @@ network "get" "https://api.github.com/repos/Mistium/owtp/git/trees/main?recursiv
 
 w = 700
 loc 999 2 0 -50
-change_x -10
+change_x -100
 text "Search.web" 20 : c#fff
 loc 999 2 0 -100
 change_y scroll_y
