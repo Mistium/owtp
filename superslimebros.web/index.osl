@@ -1,6 +1,8 @@
 current_tab_name = {"title":"SSB!","icon":"image https://raw.githubusercontent.com/Mistium/Super-Slime-Bros/main/assets/icon.png 20"}
 
-window_colour = #eee
+c #777
+goto 0 0
+square frame_width frame_height 10
 
 goto mouse_x / 20 mouse_y / 20
 square 300 200 20 : c#ccc
