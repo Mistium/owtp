@@ -4,7 +4,19 @@ c #777
 goto 0 0
 square frame_width frame_height 10
 
-goto mouse_x / 20 mouse_y / 20
-square 300 200 20 : c#ccc
+ssb_bgx += mouse_x + ssb_bgx / 10
+ssb_bgy += mouse_y + ssb_bgy / 10
+goto ssb_bgx ssb_bgy
+image "https://raw.githubusercontent.com/Mistium/Super-Slime-Bros/main/assets/stages/spike.png" frame_width * 2
+goto 0 0
+square 300 200 30 : c#ccc
+text "Download" 10 : c#000 chx#-140
+goto 0 70
+square 300 60 20 : c#ccc
+if clicked (
+redirect "owtp://superslimebros.web/about"
+)
+text "About" 10 : c#000 chx#-140
+goto 0 -70
 change -140 80
-text "SUPER SLIME BROS" 10 : c#000
+text "Super Slime Bros" 10 : c#000
