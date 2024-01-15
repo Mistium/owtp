@@ -10,10 +10,10 @@ goto ssb_bgx ssb_bgy
 image "https://raw.githubusercontent.com/Mistium/Super-Slime-Bros/main/assets/stages/spike.png" frame_width * 2
 goto 0 0
 square 300 200 30 : c#ccc
-goto 0 70
+goto 0 20
 square 300 60 20 : c#eee
 text "Download" 10 : c#000 chx#-140
-goto 0 -70
+goto 0 -50
 square 300 60 20 : c#eee
 if clicked (
 redirect "owtp://superslimebros.web/about"
