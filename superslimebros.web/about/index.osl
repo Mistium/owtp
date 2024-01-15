@@ -5,4 +5,5 @@ superslime_url = "https://raw.githubusercontent.com/Mistium/owtp/main/superslime
 multiplier = frame_width / superslime_url.imageinfo("width")
 page_len = superslime_url.imageinfo("height") * multiplier
 goto 0 scroll_y - ( page_len / 2 )
+change_y frame_height / 2
 image superslime_url frame_width
