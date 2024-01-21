@@ -56,8 +56,12 @@ log data
 count = 0
 loop apps.len (
 count += 1
-loc 999 2 110 count * -140 + 65 + scroll_y
-square frame_width - 280 120 10 : c#333
+y = count * -140 + 65 + scroll_y
+current = apps.[count]
+loc 999 2 110 y
+square frame_width - 270 120 10 : c#333
+loc 2 2 230 y
+text current."name" 10 : c#fff
 )
 page_len = count * 140
 )
