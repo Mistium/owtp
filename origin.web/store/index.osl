@@ -55,7 +55,7 @@ network "get" "https://origin-store-app-backend.onrender.com/applications"
 apps = data.key("apps")
 log data
 count = scroll_y.divide(140).round
-loop frame_height / 140 (
+loop frame_height.divide(140).round (
 count += 1
 y = count * -140 + 65 + scroll_y
 current = apps.[count]
@@ -66,4 +66,3 @@ text current."name" 12 : c#fff
 )
 page_len = count * 140
 )
-window "show"
