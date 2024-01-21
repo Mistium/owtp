@@ -53,7 +53,6 @@ text "Profile" 9 : chx#20
 if page == "browse" (
 network "get" "https://origin-store-app-backend.onrender.com/applications"
 apps = data.key("apps")
-log data
 count = scroll_y.divide(140).round
 loop frame_height.divide(140).round (
 count += 1
@@ -64,5 +63,5 @@ square frame_width - 270 120 10 : c#333
 loc 2 2 230 y
 text current."name" 12 : c#fff
 )
-page_len = count * 140
+page_len = apps.len * 140
 )
