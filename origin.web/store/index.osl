@@ -61,7 +61,7 @@ current = apps.[count]
 loc 999 2 110 y
 square frame_width - 270 120 10 : c#333
 loc 2 2 230 y
-text current."name" 10 : c#fff
+text current."name" 12 : c#fff
 )
 page_len = count * 140
 )
