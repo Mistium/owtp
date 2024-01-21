@@ -1,5 +1,3 @@
-frame_width = window."width"
-frame_height = window."height"
 if onload (
 page = "browse"
 onload = false
