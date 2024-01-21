@@ -1,0 +1,67 @@
+frame_width = window."width"
+frame_height = window."height"
+if onload (
+page = "browse"
+onload = false
+network "clear" "https://origin-store-app-backend.onrender.com/applications"
+)
+
+loc 2 999 110 0
+square 200 frame_height 20 : c#222
+loc 2 2 20 -25
+text "originStore" 15 : c#fff
+
+loc 2 2 110 -70
+if page == "browse" "c global_accent" else "c #333"
+square 200 30 10
+if clicked "page = browse"
+
+if page == "search" "c global_accent" else "c #333"
+square 200 30 10 : chy#-50
+if clicked "page = search"
+
+if page == "library" "c global_accent" else "c #333"
+square 200 30 10 : chy#-50
+if clicked "page = library"
+
+if page == "wishlist" "c global_accent" else "c #333"
+square 200 30 10 : chy#-50
+if clicked "page = wishlist"
+
+if page == "profile" "c global_accent" else "c #333"
+square 200 30 10 : chy#-50
+if clicked "page = profile"
+
+loc 2 2 24 -70
+icon "w 3 square 0 -3.5 7 7 cutcircle 0 5 5 0 90" 0.8 : c#fff
+text "Browse" 9 : chx#20
+
+loc 2 2 24 -120
+icon "w 3 cutcircle -2 2 8 0 180 line 4 -4 12 -12" 0.8
+text "Search" 9 : chx#20
+
+loc 2 2 24 -170
+icon "w 3 square -6 6 3.8 3.8 square 6 6 3.8 3.8 square -6 -6 3.8 3.8 cutcircle 6 -6 3.8 0 180" 0.8
+text "Library" 9 : chx#20
+
+loc 2 2 24 -220
+icon "w 3 line -7 10 7 10 cont 7 -10 cont 0 -5 cont -7 -10 cont -7 10" 0.8
+text "Wishlist" 9 : chx#20
+
+loc 2 2 25 -270
+image user_icon 30
+text "Profile" 9 : chx#20
+
+if page == "browse" (
+network "get" "https://origin-store-app-backend.onrender.com/applications"
+apps = data.key("apps")
+log data
+count = 0
+loop apps.len (
+count += 1
+loc 999 2 110 count * -140 + 65 + scroll_y
+square frame_width - 260 120 10 : c#333
+)
+page_len = count * 140
+)
+window "show"
