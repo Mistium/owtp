@@ -1,6 +1,5 @@
 if onload (
 page = "browse"
-onload = false
 network "clear" "https://origin-store-app-backend.onrender.com/applications"
 )
 
@@ -58,7 +57,7 @@ count = 0
 loop apps.len (
 count += 1
 loc 999 2 110 count * -140 + 65 + scroll_y
-square frame_width - 260 120 10 : c#333
+square frame_width - 280 120 10 : c#333
 )
 page_len = count * 140
 )
