@@ -65,4 +65,3 @@ text current."name" 12 : c#fff
 )
 page_len = count * 140
 )
-window "show"
