@@ -12,7 +12,7 @@ square 100 100 1 0 1
 if clicked and can.not (
 can = true
 )
-image "https://raw.githubusercontent.com/Mistium/Origin-OS/main/Websites/rat.web/assets/rat_mouse_PNG23553.png" 100
+image "https://raw.githubusercontent.com/Mistium/owtp/main/rat.web/assets/rat_mouse_PNG23553.png" 100
 
 Xcoor += 100
 if Xcoor > 200 "Ycoor += 100"
@@ -26,6 +26,6 @@ if Ycoor > 400 (
 )
 
 //Please do not eat them. Regards -D.M 
-if can (
+if can and mouse_down.not (
 redirect "owtp://rat.web/rat.osl"
 )
