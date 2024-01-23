@@ -14,5 +14,8 @@ size += size
 if size > 10000 (
 size = 0
 )
+if inc > 1000 (
+inc = 0.01
+)
 
 // epic
