@@ -3,8 +3,6 @@ if onload (
 network "clear" "https://api.github.com/repos/Mistium/owtp/git/trees/main?recursive=1"
 )
 
-loc 
-
 w = 700
 loc 999 2 0 -50
 change_x -110
@@ -29,7 +27,7 @@ out = []
 
 i = 0
 loop index.len (
-i += 1
+i ++
 cur = index.[i].key("path").split("/")
 last = cur.len
 current = cur.[last]
@@ -60,4 +58,4 @@ opentab "owtp://" ++ index.[item].key("path")
 page_len = out.len.clamp(0,15) * 40 + 100
 )
 loc -2 -2 -30 15
-text "v5" 10 : c#fff
+text "v6" 10 : c#fff
