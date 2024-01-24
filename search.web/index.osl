@@ -62,4 +62,4 @@ opentab "owtp://" ++ index.[item].key("path")
 page_len = out.len.clamp(0,15) * 40 + 100
 )
 loc -2 -2 -50 15
-text "v0.8" 10 : c#fff
+text "v0.9" 10 : c#fff
