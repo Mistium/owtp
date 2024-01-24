@@ -2,7 +2,7 @@ current_tab_name = {"title":"Rat Accelerator","icon":"image https://raw.githubus
 
 if onload (
 inc = 0.01
-size = 0
+size = 1
 )
 
 goto 0 0
@@ -17,5 +17,3 @@ size = 0
 if inc > 1000 (
 inc = 0.01
 )
-
-// epic
