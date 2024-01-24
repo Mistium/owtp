@@ -1,3 +1,4 @@
+current_tab_name = {"title":"Origin Search","icon":"search"}
 if onload (
 network "get" "https://api.github.com/repos/Mistium/owtp/git/trees/main?recursive=1"
 )
@@ -33,9 +34,12 @@ if current.contains(input_searchBar) "out = out.append(i)"
 
 if out == "out".destr "out = []"
 y = -180 + scroll_y
-
+if out.len == 0 (
+loc 999 2 w / -2 y
+text "No Results :(" 10
+) else (
 i = 0
-loop out.len.clamp(0,15) (
+loop out.len.clamp(0,10) (
 i += 1
 c #222
 loc 999 2 w / -2 y
@@ -51,4 +55,3 @@ opentab "owtp://" ++ index.[item].key("path")
 page_len = out.len.clamp(0,15) * 40 + 100
 
 loc 2 2 30 -30
-current_tab_name = {"title":"Origin Search","icon":"search"}
