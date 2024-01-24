@@ -22,6 +22,7 @@ loc 2 2 20 -20
 text "Loading Index" 10 : c#fff
 ) else (
 if selected_input == "searchBar" and "enter".pressed (
+log data
 index = data.key("tree")
 out = []
 
@@ -58,4 +59,4 @@ opentab "owtp://" ++ index.[item].key("path")
 page_len = out.len.clamp(0,15) * 40 + 100
 )
 loc -2 -2 -30 15
-text "v6" 10 : c#fff
+text "v6.5" 10 : c#fff
