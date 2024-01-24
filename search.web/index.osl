@@ -24,7 +24,8 @@ if data == "loading" (
 loc 2 2 20 -20
 text "Loading Index" 10 : c#fff
 ) else (
-if selected_input == "searchBar" and ( timer - last_typed > 0.5 ) (
+if selected_input == "searchBar" and ( timer - last_typed > 1 ) (
+last_typed = timer
 index = data.key("tree")
 out = []
 
