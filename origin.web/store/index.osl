@@ -67,5 +67,5 @@ loc 2 2 260 y
 icon current."icon" 0.8 : c#fff
 text current."name" 12 : c#fff chx#30
 )
-page_len = apps.len * 40
+page_len = apps.len * 55
 )
