@@ -52,12 +52,7 @@ text "Profile" 9 : chx#20
 
 if page == "browse" (
 network "get" "https://raw.githubusercontent.com/Mistium/Origin-OS/main/Resources/Appstore/Apps.json"
-if origin_store_data_temp != data (
-origin_store_data_temp = data
 apps = data
-) else (
-apps = origin_store_data_temp
-)
 count = scroll_y.divide(40).round
 loop frame_height.divide(40).round (
 count += 1
