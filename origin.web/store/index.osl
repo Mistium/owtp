@@ -2,6 +2,7 @@ current_tab_name = {"title":"originStore","icon":"w 3 square 0 -3.5 7 7 cutcircl
 if onload (
 page = "browse"
 network "clear" "https://raw.githubusercontent.com/Mistium/Origin-OS/main/Resources/Appstore/Apps.json"
+onload = false
 )
 
 loc 2 999 110 0
@@ -54,9 +55,11 @@ if page == "browse" (
 network "get" "https://raw.githubusercontent.com/Mistium/Origin-OS/main/Resources/Appstore/Apps.json"
 apps = data
 count = scroll_y.divide(40).round
+count2 = 0
 loop frame_height.divide(40).round (
-count += 1
-y = count - 0.5 * -55 + scroll_y
+count ++
+count2 ++
+y = count2 - 0.5 * -55 + scroll_y
 current = apps.[count]
 loc 999 2 110 y
 square frame_width - 270 40 10 : c#333
