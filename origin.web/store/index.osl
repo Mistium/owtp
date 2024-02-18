@@ -1,7 +1,7 @@
 current_tab_name = {"title":"originStore","icon":"w 3 square 0 -3.5 7 7 cutcircle 0 5 5 0 90"}
 if onload (
 page = "browse"
-network "clear" "https://origin-store-app-backend.onrender.com/applications"
+network "clear" "https://raw.githubusercontent.com/Mistium/Origin-OS/main/Resources/Appstore/Apps.json"
 )
 
 loc 2 999 110 0
@@ -51,24 +51,24 @@ image user_icon 30
 text "Profile" 9 : chx#20
 
 if page == "browse" (
-network "get" "https://origin-store-app-backend.onrender.com/applications"
+network "get" "https://raw.githubusercontent.com/Mistium/Origin-OS/main/Resources/Appstore/Apps.json"
 if origin_store_data_temp != data (
 origin_store_data_temp = data
-apps = data.key("apps")
-origin_store_apps_temp = apps
+apps = data
 ) else (
-apps = origin_store_apps_temp
+apps = origin_store_data_temp
 )
-count = scroll_y.divide(140).round
-loop frame_height.divide(140).round (
+count = scroll_y.divide(40).round
+loop frame_height.divide(40).round (
 count += 1
 y = count * -140 + 65 + scroll_y
 current = apps.[count]
 loc 999 2 110 y
-square frame_width - 270 120 10 : c#333
+square frame_width - 270 25 10 : c#333
 if clicked "page = count"
-loc 2 2 260 y + 50
-text current."name" 12 : c#fff
+loc 2 2 260 y
+icon current."icon" 0.8 : c#fff
+text current."name" 12 : c#fff chx#30
 )
-page_len = apps.len * 140
+page_len = apps.len * 40
 )
