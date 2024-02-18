@@ -47,7 +47,7 @@ icon "w 3 line -7 10 7 10 cont 7 -10 cont 0 -5 cont -7 -10 cont -7 10" 0.8
 text "Wishlist" 9 : chx#20
 
 loc 2 2 25 -270
-image user_icon 30
+image user_icon.str 30
 text "Profile" 9 : chx#20
 
 if page == "browse" (
@@ -61,11 +61,13 @@ apps = origin_store_data_temp
 count = scroll_y.divide(40).round
 loop frame_height.divide(40).round (
 count += 1
-y = count * -55 + 65 + scroll_y
+y = count - 0.5 * -55 + scroll_y
 current = apps.[count]
 loc 999 2 110 y
 square frame_width - 270 40 10 : c#333
-if clicked "page = count"
+if clicked (
+page = current."name"
+)
 loc 2 2 260 y
 icon current."icon" 0.8 : c#fff
 text current."name" 12 : c#fff chx#30
