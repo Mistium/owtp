@@ -61,10 +61,10 @@ apps = origin_store_data_temp
 count = scroll_y.divide(40).round
 loop frame_height.divide(40).round (
 count += 1
-y = count * -140 + 65 + scroll_y
+y = count * -55 + 65 + scroll_y
 current = apps.[count]
 loc 999 2 110 y
-square frame_width - 270 25 10 : c#333
+square frame_width - 270 40 10 : c#333
 if clicked "page = count"
 loc 2 2 260 y
 icon current."icon" 0.8 : c#fff
