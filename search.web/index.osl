@@ -7,14 +7,11 @@ if selected_input == "searchBar" and "any".pressed (
 last_typed = timer
 )
 w = 700
-loc 999 2 0 -50 + scroll_y
-change_x -110
+loc 999 2 -110 -50 + scroll_y
 text "Search.web" 20 : c#fff
-loc 999 2 0 -100
-change_y scroll_y
+loc 999 2 0 -100 + scroll_y
 if frame_width - 100 < w "w = frame_width - 100"
-c c_searchbar
-square w 10 40 1
+square w 10 40 1 : c#c_searchbar
 change_x w * -0.5 + 10
 icon "search" 0.7 c#tab_text
 change w / 2 + 10
