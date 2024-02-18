@@ -1,4 +1,5 @@
 c #fff
 goto -330 180
 text "beta chat ~ might not get update" 10
-iframe "https://wholesale-calico-rhythm.glitch.me/" "iframe1" 0 -20 frame_width frame_height - 40
+goto 0 0
+iframe "https://wholesale-calico-rhythm.glitch.me/" "iframe1" x_position y_position frame_width frame_height - 40
