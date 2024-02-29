@@ -1,2 +1,2 @@
 current_tab_name = {"title":"Youtube","icon":"image https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png 20"}
-iframe "https://youtube.com" "iframe" frame_x frame_y frame_width frame_height
+iframe "https://www.youtube.com" "iframe" frame_x frame_y frame_width frame_height
