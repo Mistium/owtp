@@ -3,7 +3,7 @@ index = data.key("tree")
 data = null
 r = ["1"] + index.len
 item = r.random
-if [1,100].random == 1 and index.[item].key("path") (
+if [1,100].random == 1 (
 redirect "owtp://" ++ index.[item].key("path")
 )
 if index.[item].key("path") (
