@@ -3,10 +3,4 @@ index = data.key("tree")
 data = null
 r = ["1"] + index.len
 item = r.random
-if [1,100].random == 1 (
 redirect "owtp://" ++ index.[item].key("path")
-)
-if index.[item].key("path") (
-loc 2 2 20 -20
-text index.[item].key("path") 10 : c#c_text
-)
