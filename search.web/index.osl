@@ -1,6 +1,7 @@
 current_tab_name = {"title":"Origin Search","icon":"search"}
 if onload (
 network "clear" "https://api.github.com/repos/Mistium/owtp/git/trees/main?recursive=1"
+tree = 0
 )
 
 if selected_input == "searchBar" and "any".pressed (
@@ -16,11 +17,15 @@ change_x w * -0.5 + 10
 icon "search" 0.7 c#tab_text
 change w / 2 + 10
 input w - 40 30 "searchBar" "Search the Origin Network" c#c_searchbar
+if tree = 0 (
 network "get" "https://api.github.com/repos/Mistium/owtp/git/trees/main?recursive=1"
+)
 if data == "loading" (
+tree = 0
 loc 2 2 20 -20
 text "Loading Index" 10 : c#fff
 ) else (
+tree = data
 if selected_input == "searchBar" and ( timer - last_typed > 1 ) (
 last_typed = timer
 index = data.key("tree")
@@ -29,10 +34,10 @@ out = []
 i = 0
 loop index.len (
 i ++
-cur = index.[i].key("path").split("/")
+cur = index.[i]."path".split("/")
 last = cur.len
-current = cur.[last]
-if current.contains(input_searchBar) "out = out.append(i)"
+cur.[last]
+if cur.contains(input_searchBar) "out = out.append(i)"
 )
 )
 )
@@ -59,4 +64,4 @@ opentab "owtp://" ++ index.[item].key("path")
 page_len = out.len.clamp(0,15) * 40 + 100
 )
 loc -2 -2 -50 15
-text "v0.9" 10 : c#fff
+text "v1.1" 10 : c#fff
