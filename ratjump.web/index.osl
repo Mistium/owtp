@@ -1,3 +1,5 @@
+current_tab_name = {"title":"Rat Jump!","icon":"image https://raw.githubusercontent.com/Mistium/owtp/main/rataccelerator.web/assets/rat_mouse_PNG23553.png 22.576"}
+
 if onload (
 position = 0
 velocity = 0
@@ -11,7 +13,7 @@ velocity = 50
 
 if jump (
 position += velocity
-velocity -= 5
+velocity -= 5 * delta_time
 
 )
 
