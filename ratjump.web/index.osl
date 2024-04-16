@@ -8,12 +8,12 @@ jump = false
 
 if "space".pressed and jump.not (
 jump = true
-velocity = 15000 * delta_time
+velocity = 5000 * delta_time
 )
 
 if jump (
 position += velocity
-velocity -= 1000 * delta_time
+velocity -= 500 * delta_time
 
 )
 
