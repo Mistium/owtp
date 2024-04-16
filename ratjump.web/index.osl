@@ -4,16 +4,22 @@ if onload (
 position = 0
 velocity = 0
 jump = false
+pee = false
 )
 
-if "space".pressed and jump.not (
+if "space".pressed and jump.not and pee.not (
 jump = true
-velocity = 5000 * delta_time
+velocity = 7500 * delta_time
+pee = true
+)
+
+if "space".pressed.not and jump.not (
+pee = false
 )
 
 if jump (
 position += velocity
-velocity -= 500 * delta_time
+velocity -= 400 * delta_time
 
 )
 
