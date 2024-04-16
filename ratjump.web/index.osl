@@ -1,4 +1,4 @@
-current_tab_name = {"title":"Rat Jump!!!","icon":"image https://raw.githubusercontent.com/Mistium/owtp/main/rataccelerator.web/assets/rat_mouse_PNG23553.png 22.576"}
+current_tab_name = {"title":"Rat Jump!","icon":"image https://raw.githubusercontent.com/Mistium/owtp/main/rataccelerator.web/assets/rat_mouse_PNG23553.png 22.576"}
 
 if onload (
 position = 0
@@ -8,12 +8,12 @@ jump = false
 
 if "space".pressed and jump.not (
 jump = true
-velocity = 50
+velocity = 15000 * delta_time
 )
 
 if jump (
 position += velocity
-velocity -= 500 * delta_time
+velocity -= 1000 * delta_time
 
 )
 
