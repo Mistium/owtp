@@ -13,7 +13,7 @@ velocity = 50
 
 if jump (
 position += velocity
-velocity -= 5
+velocity -= 5 * delta_time
 
 )
 
