@@ -1,0 +1,19 @@
+goto 0 0
+square frame.width frame.height 10 : c#2a1b40
+loc 2 2 20 -30
+text "originOS Rift" 13 : c#fff
+loc 2 2 20 -54
+text "The Most Advanced GUI-Based TurbowarpOS" 10
+
+frame frame_width / -2 frame_height / 2 - 70 frame_width / 2 frame_height / 2 - frame_width
+fw = frame.width
+
+goto 40 -40
+image "https://origin.mistium.com/Resources/Desktop3.png" fw - 100
+
+goto 0 0
+image "https://origin.mistium.com/Resources/Desktop2.png" fw - 100
+
+goto -40 40
+image "https://origin.mistium.com/Resources/Desktop1.png" fw - 100
+frame "clear"
