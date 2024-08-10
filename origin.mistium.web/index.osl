@@ -1,3 +1,5 @@
+current_tab_name = {"title":"originOS","icon":"image https://raw.githubusercontent.com/Mistium/Origin-OS/main/origin-logo.png 20"}
+
 goto 0 0
 square frame.width frame.height 10 : c#2a1b40
 loc 2 2 20 -30
