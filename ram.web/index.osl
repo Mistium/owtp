@@ -1,0 +1,46 @@
+if onload (
+
+rainbow = [
+    "#FF0000", "#FF3300", "#FF6600", "#FF9900", "#FFCC00", "#FFFF00",
+    "#CCFF00", "#99FF00", "#66FF00", "#33FF00", "#00FF00", "#00FF33",
+    "#00FF66", "#00FF99", "#00FFCC", "#00FFFF", "#00CCFF", "#0099FF",
+    "#0066FF", "#0033FF", "#0000FF", "#3300FF", "#6600FF", "#9900FF",
+    "#CC00FF", "#FF00FF", "#FF00CC", "#FF0099", "#FF0066", "#FF0033"
+]
+
+col1 = 1
+col2 = 1
+col3 = 3
+)
+
+c rainbow[col3.round]
+square frame.width frame.height 10
+
+c rainbow[col1.round]
+goto 13 * -25 window.top - 80
+text "Download Ram" 50
+
+goto 0 0
+square 200 200 50 : hover_size#1.1
+if onclick (
+  
+  file "download" "1mb.ram" "" "https://raw.githubusercontent.com/RattusDong/owtpnus/refs/heads/main/ram.web/assets/1mb.ram".get() user_folder ++ "/Downloads"
+)
+c rainbow[col2.round] 
+icon "download" 9
+
+col1 += 0.5
+if col1 > rainbow.len (
+  col1 = 1
+)
+col2 += 0.33
+if col2 > rainbow.len (
+  col2 = 1
+)
+col3 += 0.25
+if col3 > rainbow.len (
+  col3 = 1
+)
+
+
+
