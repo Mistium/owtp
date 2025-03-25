@@ -1,0 +1,97 @@
+
+snake_icon = ""
+current_tab_name = {"title":"Snake","icon":"w 20 c #000 dot 0 0 w 3 c #416f3b dot -4.5 -1.5 dot -1.5 -4.5 dot 1.5 -1.5 c #65ad5b dot -4.5 -4.5 dot 1.5 -4.5 c #cd0000 dot 4.5 -1.5 dot 1.5 4.5"}
+if onload (
+  move = def(x,y) -> (
+    x += head_x
+    y += head_y
+    snakex.append(x)
+    snakey.append(y)
+  )
+
+  t = 0
+  snakex = [0]
+  snakey = [0]
+  snake_dir = 0
+  mode = "Menu"
+ 
+  score = 0
+  slider_speed = 0.2
+  exit
+)
+c #222
+loc 999 2 0 -20
+square window_width 10 30
+goto 0 -20
+square 390 390 0
+c #fff
+loc 2 2 10 -20
+text `Snake` 9
+
+if mode == "Menu" (
+  c #777
+  goto 0 0
+  square 150 20 10 1
+  snakelen = 1
+  snakex = ["100"]
+  snakey = ["-10"]
+  if clicked (
+    mode = "play"
+    snakedir = "w"
+    head_x = 0
+    head_y = -20
+    move(0,20)
+    foodx = random(-9,9) * 20
+    foody = random(-9,9) * 20 - 20
+  )
+)
+if mode == "menu" (
+  c #fff
+  change_x -20
+  text "Play" 9
+)
+if mode == "Play" (
+  if highscore < snakelen (
+    highscore = snakelen
+    save "highscore.txt" "set" highscore
+  )
+  if "w".onpress and snakedir != "s" "snakedir = \"w\""
+  if "s".pressed and snakedir != "w" "snakedir = \"s\""
+  if "a".pressed and snakedir != "d" "snakedir = \"a\""
+  if "d".pressed and snakedir != "a" "snakedir = \"d\""
+
+  if timer - slider_speed > t (
+    t = timer
+    if snakedir == "w" "move(0,20)"
+    if snakedir == "a" "move(-20,0)"
+    if snakedir == "s" "move(0,-20)"
+    if snakedir == "d" "move(20,0)"
+  )
+  temp = snakex.len
+  head_x = snakex[temp].toNum()
+  head_y = snakey[temp].toNum()
+  count = temp + 1
+  loop snakelen (
+    count --
+    draw_x = snakex[count].toNum()
+    draw_y = snakey[count].toNum()
+    goto draw_x draw_y
+    if draw_x == head_x and ( draw_y == head_y ) and ( count < snakex.len ) "mode = \"menu\""
+    c #65ad5b
+    if snakex.len - count % 2 == 0 "c #416f3b"
+    if count == snakex.len "c #cd0000"
+    square 13 13 6 1
+  )
+
+  if ( head_x > 180 ) or ( head_x < -180 ) or ( head_y > 160 ) or ( head_y < -210 ) (
+    mode = "menu"
+  )
+  c #cd0000
+  goto foodx foody
+  square 5 5 10
+  if head_x == foodx and ( head_y == foody ) (
+    snakelen ++
+    foodx = random(-9, 9) * 20
+    foody = random(-9, 9) * 20 - 20
+  )
+)
